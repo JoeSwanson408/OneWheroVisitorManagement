@@ -1,0 +1,44 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+
+	<ItemGroup>
+		<Folder Include="Fonts\" />
+		<Folder Include="Images\"/>
+		<Folder Include="Model\" />
+		<Folder Include="Styles\" />
+		<Folder Include="Utilities\" />
+		<Folder Include="View\" />
+		<Folder Include="ViewModel\" />
+	</ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Data.SQLite.Core" Version="1.0.119" />
+  </ItemGroup>
+
+  <ItemGroup>
+      <Resource Include="Images\back_def.png" />
+      <Resource Include="Images\back_mo.png" />
+      <Resource Include="Images\logo.png" />
+      <Resource Include="Images\piranhas.jpg" />
+      <Resource Include="Images\shutdown_def.png" />
+      <Resource Include="Images\shutdown_mo.png" />
+	  <Resource Include="Images\triangle.png" />
+	  <Resource Include="Fonts\MontserratAlternates-ExtraBold.ttf" />
+	  <Resource Include="Fonts\Montserrat-Italic-VariableFont_wght.ttf" />
+	  <Resource Include="Fonts\Montserrat-VariableFont_wght.ttf" />
+	  <Resource Include="Fonts\MsMadi-Regular.ttf" />
+	  <Resource Include="Fonts\Spartan-Bold.ttf" />
+	  <Resource Include="Fonts\Spartan-Medium.ttf" />
+	  <Resource Include="Fonts\Spartan-Regular.ttf" />
+	  <Resource Include="Fonts\Spartan-SemiBold.ttf" />
+  </ItemGroup>
+
+</Project>

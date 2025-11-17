@@ -1,0 +1,55 @@
+﻿<Window x:Class="OnewheroVisitorManagement.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="clr-namespace:OnewheroVisitorManagement.ViewModel"
+        xmlns:Menu="clr-namespace:OnewheroVisitorManagement.Utilities"
+        Title="MainWindow" Height="720" Width="1280"
+        AllowsTransparency="True"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        Background="Transparent">
+    <Grid>
+        <Grid Width="600" Height="400">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Border Background="#F4F4F4" CornerRadius="20" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
+
+            <TextBlock Grid.Row="0"  
+                   Grid.Column="0" 
+                   Grid.ColumnSpan="2" 
+                   Text="Onewhero Visitor Management System" 
+                   Style="{StaticResource TitleText_Style}" 
+                   FontSize="25"
+                   Margin="0,20"/>
+
+            <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center" Width="200" >
+                <Button Height="60" Click="Visitor_Click" Margin="0,0,0,20">
+                    <TextBlock Text="Enter as Visitor"
+                           Style="{StaticResource BtnText_Style}"/>
+                </Button>
+                <Button Height="60" Click="Register_Click">
+                    <TextBlock Text="Register Visitor" Style="{StaticResource BtnText_Style}"/>
+                </Button>
+            </StackPanel>
+            <Button Height="60"
+                Width="200"
+                Grid.Row="1" Grid.Column="1"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center"
+                Click="AdminLogin_Click">
+                <TextBlock Text="Admin Login"
+                       Style="{StaticResource BtnText_Style}"/>
+            </Button>
+        </Grid>
+        <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden" Navigated="MainFrame_Navigated"/>
+    </Grid>
+</Window>

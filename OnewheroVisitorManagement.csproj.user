@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <Compile Update="RegisterPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\AdminNav.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\AdminPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Analytics.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\AdminEvents.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\RegisterNewVisitor.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\VisitorControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="AdminLogin.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\About.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Booking.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Contact.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\VisitorEvents.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Services.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\VisitorNav.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\VisitorPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+</Project>
