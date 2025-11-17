@@ -1,8 +1,8 @@
-using System;
-using System.Text.Json.Serialization;
-
-namespace OneWheroManagement.AdminEvents.Analytics
+namespace OneWheroVisitorManagement.AdminEvents.Analytics
 {
+    using System;
+    using System.Text.Json.Serialization;
+
     public class AnalyticsEventStats
     {
         [JsonPropertyName("eventId")]
