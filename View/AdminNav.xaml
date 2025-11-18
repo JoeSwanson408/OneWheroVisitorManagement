@@ -1,0 +1,50 @@
+﻿<Page x:Class="OnewheroVisitorManagement.View.AdminNav"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="clr-namespace:OnewheroVisitorManagement.ViewModel"
+        xmlns:Menu="clr-namespace:OnewheroVisitorManagement.Utilities">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        
+        <Grid Grid.Column="0">
+            <Border Background="#415e31" CornerRadius="20,0,0,20"/>
+            <StackPanel Height="400" Width="200">
+
+                <Menu:Btn Style="{StaticResource BtnStyle}" Command="{Binding AdminPageCommand}" IsChecked="True">
+                    <Grid>
+                        <TextBlock Text="Home" Style="{StaticResource BtnText_Style}" />
+                    </Grid>
+                </Menu:Btn>
+
+                <Menu:Btn Style="{StaticResource BtnStyle}" Command="{Binding VCCommand}">
+                    <Grid>
+                        <TextBlock Text="Visitors" Style="{StaticResource BtnText_Style}" />
+                    </Grid>
+                </Menu:Btn>
+                
+                <Menu:Btn Style="{StaticResource BtnStyle}" Command="{Binding AnalyticsCommand}">
+                    <Grid>
+                        <TextBlock Text="Analytics" Style="{StaticResource BtnText_Style}" />
+                    </Grid>
+                </Menu:Btn>
+
+                <Menu:Btn Style="{StaticResource BtnStyle}" Command="{Binding AdminEventsCommand}">
+                    <Grid>
+                        <TextBlock Text="Events" Style="{StaticResource BtnText_Style}" />
+                    </Grid>
+                </Menu:Btn>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Column="1">
+            <ContentControl x:Name="AdminPages" Content="{Binding CurrentView}"/>
+            <Button Style="{StaticResource ExitApp}" Command="{Binding ExitCommand}"/>
+        </Grid>
+        
+    </Grid>
+</Page>

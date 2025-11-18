@@ -2,6 +2,7 @@
 using OnewheroVisitorManagement.ViewModel;
 using System.Collections.ObjectModel;
 using System.Data.SQLite;
+using System.Diagnostics;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -52,7 +53,7 @@ namespace OnewheroVisitorManagement
                     BookingID INTEGER PRIMARY KEY AUTOINCREMENT,
                     VisitorID INTEGER,
                     EventID INTEGER,
-                    BookingDate DATETIME,
+                    BookingDate TEXT,
                     NumTickets INTEGER,
                     TotalCost DOUBLE,
                     FOREIGN KEY(EventID) REFERENCES Events(EventID));";
@@ -94,7 +95,29 @@ namespace OnewheroVisitorManagement
                             "'In this event, you can bring your children to pet some piranhas :D'," +
                             " 15.00," +
                             "'/Images/piranhas.jpg');";
+                        string insertNewEvent = "INSERT INTO Events (EventName, EventDate, EventDesc, EventCost, EventImgSrc) VALUES (" +
+                            "'Kill Yourself Fest', " +
+                            "'11-09-2001', " +
+                            "'In this event, you can kill yourself and the inhabitants of the United States of America'," +
+                            " 20.00," +
+                            "'/Images/9-11.jpg');";
                         new SQLiteCommand(insertEvent, connection).ExecuteNonQuery();
+                    }
+                }
+
+                string checkOtherEvent = "SELECT COUNT(*) FROM Events WHERE EventName='Kill Yourself Fest';";
+                using (var cmd = new SQLiteCommand(checkOtherEvent, connection))
+                {
+                    int Count = Convert.ToInt32(cmd.ExecuteScalar()); //returns first column of first row
+                    if (Count == 0)
+                    {
+                        string insertNewEvent = "INSERT INTO Events (EventName, EventDate, EventDesc, EventCost, EventImgSrc) VALUES (" +
+                            "'Kill Yourself Fest', " +
+                            "'11-09-2001', " +
+                            "'In this event, you can kill yourself and the inhabitants of the United States of America'," +
+                            " 20.00," +
+                            "'/Images/9-11.jpg');";
+                        new SQLiteCommand(insertNewEvent, connection).ExecuteNonQuery();
                     }
                 }
 
@@ -124,6 +147,11 @@ namespace OnewheroVisitorManagement
                                 EventImgSrc = reader.GetString(5)
                             };
                             EventsList.Add(ev);
+                            Debug.WriteLine(ev.EventName);
+                            Debug.WriteLine(ev.EventDates);
+                            Debug.WriteLine(ev.EventDesc);
+                            Debug.WriteLine(ev.EventCost);
+                            Debug.WriteLine(ev.EventID);
                         }
                     }
                 }

@@ -50,6 +50,8 @@
                        Style="{StaticResource BtnText_Style}"/>
             </Button>
         </Grid>
-        <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden" Navigated="MainFrame_Navigated"/>
+        <Border CornerRadius="20">
+            <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden" Navigated="MainFrame_Navigated"/>
+        </Border>
     </Grid>
 </Window>

@@ -1,0 +1,38 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:vm="clr-namespace:OnewheroVisitorManagement.ViewModel"
+                    xmlns:view="clr-namespace:OnewheroVisitorManagement.View">
+
+    <DataTemplate DataType="{x:Type vm:AdminPageVM}">
+        <view:AdminPage/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:VisitorPageVM}">
+        <view:VisitorPage/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:VisitorControlVM}">
+        <view:VisitorControl/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:AnalyticsVM}">
+        <view:Analytics/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:AboutVM}">
+        <view:About/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:AdminEventsVM}">
+        <view:AdminEvents/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:VisitorEventsVM}">
+        <view:VisitorEvents/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:ContactVM}">
+        <view:Contact/>
+    </DataTemplate>
+
+</ResourceDictionary>

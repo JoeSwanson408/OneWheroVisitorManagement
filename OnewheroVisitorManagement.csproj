@@ -11,7 +11,7 @@
 
 	<ItemGroup>
 		<Folder Include="Fonts\" />
-		<Folder Include="Images\"/>
+		<Folder Include="Images\" />
 		<Folder Include="Model\" />
 		<Folder Include="Styles\" />
 		<Folder Include="Utilities\" />
@@ -31,6 +31,8 @@
       <Resource Include="Images\shutdown_def.png" />
       <Resource Include="Images\shutdown_mo.png" />
 	  <Resource Include="Images\triangle.png" />
+	  <Resource Include="Images\onewhero-bay-bg.jpg"/>
+	  <Resource Include="Images\9-11.jpg"/>
 	  <Resource Include="Fonts\MontserratAlternates-ExtraBold.ttf" />
 	  <Resource Include="Fonts\Montserrat-Italic-VariableFont_wght.ttf" />
 	  <Resource Include="Fonts\Montserrat-VariableFont_wght.ttf" />

@@ -1,0 +1,35 @@
+﻿<UserControl x:Class="OnewheroVisitorManagement.View.RegisterNewVisitor"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:OnewheroVisitorManagement.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="850">
+    <Grid Background="#F4F4F4" Margin="20">
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+            <TextBlock Text="Help us get to know you..."
+                   Style="{StaticResource Header1_Style}"
+                   Foreground="DarkSlateBlue"
+                   Margin="0,0,0,20"
+                   TextAlignment="Center"/>
+            <TextBlock Text="Areas of Interest (Select all that apply)" Style="{StaticResource Header2_Style}"/>
+            <WrapPanel x:Name="Checklist" HorizontalAlignment="Center" Margin="0,10">
+                <CheckBox x:Name="chkBirds" Content="Native Birds" Margin="0,0,15,0" Style="{StaticResource CheckBox_Style}"/>
+                <CheckBox x:Name="chkReptiles" Content="Reptiles" Margin="0,0,15,0" Style="{StaticResource CheckBox_Style}"/>
+                <CheckBox x:Name="chkHistory" Content="History" Margin="0,0,15,0" Style="{StaticResource CheckBox_Style}"/>
+                <CheckBox x:Name="chkArchitecture" Content="Architecture" Margin="0,0,15,0" Style="{StaticResource CheckBox_Style}"/>
+                <CheckBox x:Name="chkMusic" Content="Music" Margin="0,0,15,0" Style="{StaticResource CheckBox_Style}"/>
+                <CheckBox x:Name="chkLiterature" Content="Literature" Margin="0,0,15,0" Style="{StaticResource CheckBox_Style}"/>
+            </WrapPanel>
+            <Button Content="Submit"
+                    Width="100"
+                    Height="35"
+                    Margin="0,15,0,0"
+                    Background="CadetBlue"
+                    Foreground="White"
+                    FontWeight="Bold"
+                    Click="Submit_Click"/>
+        </StackPanel>
+    </Grid>
+</UserControl>

@@ -1,0 +1,89 @@
+﻿<UserControl x:Class="OnewheroVisitorManagement.View.VisitorEvents"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:vm="clr-namespace:OnewheroVisitorManagement.ViewModel"
+             xmlns:local="clr-namespace:OnewheroVisitorManagement">
+    <UserControl.DataContext>
+        <vm:VisitorEventsVM/>
+    </UserControl.DataContext>
+    
+    <ContentControl x:Name="VisitorEventsContent">
+        <ScrollViewer VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Auto">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Border Grid.RowSpan="2" CornerRadius="0,0,20,20" Background="White"/>
+                <TextBlock Text="Visitor Events Page"
+                Style="{StaticResource TitleText_Style}" Grid.Row="0"/>
+                <ItemsControl Grid.Row="1" ItemsSource="{Binding EventsCollection}">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch"/>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Margin="0,20">
+                                <Image Source="{Binding EventImgSrc}" 
+                                       VerticalAlignment="Center" 
+                                       HorizontalAlignment="Stretch"
+                                       Height="400" 
+                                       Stretch="UniformToFill"/>
+                                <Border Background="#90FFFFFF" Width="350" Height="300" CornerRadius="20"/>
+                                <StackPanel Orientation="Vertical"
+                                    Grid.Row="1"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center">
+                                    <TextBlock Text="{Binding EventName}"
+                                       Style="{StaticResource Header2_Style}"
+                                       HorizontalAlignment="Center"
+                                       Margin="0,10"/>
+                                    <TextBlock Text="Date:"
+                                       Style="{StaticResource Text_Style}"
+                                       FontSize="13"
+                                       HorizontalAlignment="Center"
+                                       Margin="0,5"/>
+                                    <TextBlock Text="{Binding EventDates}"
+                                       Style="{StaticResource Subtitle_Text}"
+                                       HorizontalAlignment="Center"
+                                       Foreground="Black"
+                                       Margin="0,5"/>
+                                    <TextBlock Text="{Binding EventDesc}"
+                                       Style="{StaticResource Text_Style}"
+                                       TextWrapping="Wrap"
+                                       Width="300"
+                                       Height="Auto"
+                                       HorizontalAlignment="Center"
+                                       TextAlignment="Center"
+                                       Margin="0,5"/>
+                                    <TextBlock Text="Ticket Cost:"
+                                       Style="{StaticResource Text_Style}"
+                                       HorizontalAlignment="Center"
+                                       Margin="0,5"/>
+                                    <TextBlock Text="{Binding EventCost}"
+                                       Style="{StaticResource Text_Style}"
+                                       HorizontalAlignment="Center"
+                                       Margin="0,5"/>
+                                    <Button Content="Book Event"
+                                    Width="150"
+                                    Height="50"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    Grid.Row="1"
+                                    Tag="{Binding EventID}"
+                                    Click="BookEvent_Click"/>
+                                </StackPanel>
+                            </Grid>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+
+            </Grid>
+        </ScrollViewer>
+    </ContentControl>
+</UserControl>

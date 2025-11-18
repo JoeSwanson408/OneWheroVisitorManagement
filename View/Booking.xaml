@@ -1,0 +1,103 @@
+﻿<UserControl x:Class="OnewheroVisitorManagement.View.Booking"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:vm="clr-namespace:OnewheroVisitorManagement.ViewModel"
+             xmlns:view="clr-namespace:OnewheroVisitorManagement.View"
+             xmlns:local="clr-namespace:OnewheroVisitorManagement"
+             DataContext="{Binding Mode=OneWay, RelativeSource={RelativeSource Self}}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Border Grid.RowSpan="2" CornerRadius="0,0,20,20" Background="White"/>
+        <TextBlock Grid.Row="0" Text="Book a Ticket" Style="{StaticResource TitleText_Style}"/>
+
+        <StackPanel Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <TextBlock Text="Event Name:" Style="{StaticResource Text_Style}" HorizontalAlignment="Center"  Margin="0,20, 0,10"/>
+            <TextBlock x:Name="txtEventName" Style="{StaticResource Header2_Style}"/>
+            <StackPanel Orientation="Vertical" 
+                    Grid.Row="1" 
+                    HorizontalAlignment="Center" 
+                    VerticalAlignment="Center">
+                <TextBlock x:Name="txtBlockCost" Style="{StaticResource Text_Style}"/>
+                <TextBlock Text="Number of Tickets:"
+                       HorizontalAlignment="Center"
+                       Style="{StaticResource Text_Style}"/>
+
+                <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center">
+                    <Button Click="Decr_Click" Background="Transparent" BorderBrush="Transparent">
+                        <Grid>
+                            <Image Source="/Images/triangle.png"
+                               Width="15"
+                               Height="15"/>
+                        </Grid>
+                    </Button>
+                    <TextBox x:Name="txtNumTickets"
+                     TextAlignment="Center"
+                     VerticalAlignment="Center"
+                     FontSize="20"
+                     IsReadOnly="True"
+                     BorderBrush="Transparent"/>
+                    <Button Click="Incr_Click" Background="Transparent" BorderBrush="Transparent">
+                        <Grid>
+                            <Image Source="/Images/triangle.png"
+                               Width="15"
+                               Height="15"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center">
+                                <Image.RenderTransform>
+                                    <RotateTransform Angle="180" CenterX="7.5" CenterY="7.5" />
+                                </Image.RenderTransform>
+                            </Image>
+                        </Grid>
+                    </Button>
+                </StackPanel>
+                <TextBlock Text="Full Name" Style="{StaticResource Text_Style}"/>
+                <TextBox x:Name="txtFullName"
+                     Margin="0,10"/>
+
+                <TextBlock Text="Contact Phone" Style="{StaticResource Text_Style}"/>
+                <TextBox x:Name="txtEmail"
+                     Margin="0,10"/>
+
+                <TextBlock x:Name="txtTotalCost"/>
+                <Button x:Name="ConfirmBookBtn" Content="Confirm Booking" 
+                    Height="60" 
+                    Width="100"
+                    Margin="15"
+                    Click="ConfirmBook_Click"/>
+                <StackPanel x:Name="CollapseInterests" Visibility="Collapsed" VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <TextBlock Text="Just another question to help us get to know you..."
+                               Style="{StaticResource Header1_Style}"
+                               Foreground="DarkSlateBlue"
+                               Margin="0,0,0,20"
+                               TextAlignment="Center"/>
+                    <TextBlock Text="Areas of Interest (Select all that apply)" Style="{StaticResource Header2_Style}"/>
+                    <WrapPanel x:Name="Checklist" HorizontalAlignment="Center" Margin="0,10">
+                        <CheckBox x:Name="chkBirds" Content="Native Birds" Margin="0,0,15,0" Style="{StaticResource CheckBox_Style}"/>
+                        <CheckBox x:Name="chkReptiles" Content="Reptiles" Margin="0,0,15,0" Style="{StaticResource CheckBox_Style}"/>
+                        <CheckBox x:Name="chkHistory" Content="History" Margin="0,0,15,0" Style="{StaticResource CheckBox_Style}"/>
+                        <CheckBox x:Name="chkArchitechture" Content="Architecture" Margin="0,0,15,0" Style="{StaticResource CheckBox_Style}"/>
+                        <CheckBox x:Name="chkMusic" Content="Music" Margin="0,0,15,0" Style="{StaticResource CheckBox_Style}"/>
+                        <CheckBox x:Name="chkLiterature" Content="Literature" Margin="0,0,15,0" Style="{StaticResource CheckBox_Style}"/>
+                    </WrapPanel>
+                    <Button Content="Submit"
+                            Width="100"
+                            Height="35"
+                            Margin="0,15,0,0"
+                            Background="CadetBlue"
+                            Foreground="White"
+                            FontWeight="Bold"
+                            Click="Submit_Click"/>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</UserControl>

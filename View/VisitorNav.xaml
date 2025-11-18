@@ -1,0 +1,58 @@
+﻿<Page x:Class="OnewheroVisitorManagement.View.VisitorNav"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="clr-namespace:OnewheroVisitorManagement.ViewModel"
+        xmlns:Menu="clr-namespace:OnewheroVisitorManagement.Utilities">
+
+    <Grid>
+        <!-- navbar layout -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="90"/>
+            <RowDefinition Height="15"/>
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+
+        <Border Background="#415e31" Grid.Row="0" CornerRadius="20,20,0,0">
+            <DockPanel>
+                <!--left logo and name -->
+                <StackPanel DockPanel.Dock="Left" Orientation="Horizontal" Margin="30,0">
+                    <Image Source="/Images/logo.png" Height="50" VerticalAlignment="Center"/>
+                </StackPanel>
+
+                <!-- nav buttons-->
+                <StackPanel DockPanel.Dock="Left" Orientation="Horizontal">
+
+                    <Menu:Btn Style="{StaticResource BtnStyle}" Command="{Binding VisitorPageCommand}" IsChecked="True">
+                        <TextBlock Text="Home" Style="{StaticResource NavText_Style}" />
+                    </Menu:Btn>
+
+                    <Menu:Btn Style="{StaticResource BtnStyle}" Command="{Binding AboutCommand}">
+                        <TextBlock Text="About Us" Style="{StaticResource NavText_Style}" />
+                    </Menu:Btn>
+
+                    <Menu:Btn Style="{StaticResource BtnStyle}" Command="{Binding VisitorEventsCommand}">
+                        <TextBlock Text="Events" Style="{StaticResource NavText_Style}" />
+                    </Menu:Btn>
+
+                    <Menu:Btn Style="{StaticResource BtnStyle}" Command="{Binding ContactCommand}">
+                        <TextBlock Text="Contact Us" Style="{StaticResource NavText_Style}" />
+                    </Menu:Btn>
+                </StackPanel>
+
+                <!-- right profile pic-->
+
+                <!-- exit button-->
+                <Button Style="{StaticResource ExitApp}" Command="{Binding ExitCommand}" VerticalAlignment="Center"/>
+            </DockPanel>
+        </Border>
+        <Border Background="White" Height="15" Grid.Row="1"/>
+        <Grid Grid.Row="2">
+            <ContentControl x:Name="VisitorPages" Content="{Binding CurrentView}"/>
+        </Grid>
+
+
+    </Grid>
+</Page>

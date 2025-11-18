@@ -38,9 +38,6 @@
     <Compile Update="View\VisitorEvents.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="View\Services.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Update="View\VisitorNav.xaml.cs">
       <SubType>Code</SubType>
     </Compile>

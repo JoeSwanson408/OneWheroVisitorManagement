@@ -1,0 +1,39 @@
+﻿<UserControl x:Class="OnewheroVisitorManagement.View.Analytics"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:vm="clr-namespace:OnewheroVisitorManagement.ViewModel"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="650">
+    <UserControl.DataContext>
+        <vm:AnalyticsVM/>
+    </UserControl.DataContext>
+
+    <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Border Grid.Row="0" Grid.RowSpan="3" CornerRadius="0,20,20,0" Background="White"/>
+            <TextBlock Grid.Row="0"  Grid.Column="0" Grid.ColumnSpan="2" Text="Bookings Database System"
+               Style="{StaticResource Header1_Style}"/>
+
+            <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Button Content="View Table"
+                    Width="150"
+                    Height="35"
+                    Margin="5"
+                    Click="ViewTable_Click"/>
+            </StackPanel>
+            <DataGrid Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" x:Name="dataGridBookings"
+                      AutoGenerateColumns="True"
+                      CanUserAddRows="False"
+                      Height="Auto"
+                      Margin="10"
+                      Background="White"/>
+        </Grid>
+    </Grid>
+</UserControl>

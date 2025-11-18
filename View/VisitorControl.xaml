@@ -1,0 +1,65 @@
+﻿<UserControl x:Class="OnewheroVisitorManagement.View.VisitorControl"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:vm="clr-namespace:OnewheroVisitorManagement.ViewModel"
+      xmlns:local="clr-namespace:OnewheroVisitorManagement.View">
+    <UserControl.DataContext>
+        <vm:VisitorControlVM/>
+    </UserControl.DataContext>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0" Grid.RowSpan="3" Grid.Column="0" Grid.ColumnSpan="2" CornerRadius="0,20,20,0" Background="White"/>
+        <TextBlock Grid.Row="0"  Grid.Column="0" Grid.ColumnSpan="2" Text="Visitor Database System"
+                   Style="{StaticResource Header1_Style}"/>
+        <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center" Width="300">
+            <TextBlock Text="Full Name" Style="{StaticResource Text_Style}"/>
+            <TextBox x:Name="txtFullName"  Height="30" Margin="0,5"/>
+
+            <TextBlock Text="Phone Number" Style="{StaticResource Text_Style}"/>
+            <TextBox x:Name="txtContact" Height="30" Margin="0,5"/>
+
+            <TextBlock Text="Interests" Style="{StaticResource Text_Style}"/>
+            <TextBox x:Name="txtInterests" Height="30" Margin="0,5"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button Content="Add Visitor"
+                        Width="150"
+                        Height="35"
+                        Margin="5"
+                        Click="AddVisitor_Click"/>
+            <Button Content="View Table"
+                        Width="150"
+                        Height="35"
+                        Margin="5"
+                        Click="ViewTable_Click"/>
+            <Button Content="Delete Visitor"
+                        Width="150"
+                        Height="35"
+                        Margin="5"
+                        Click="DeleteVisitor_Click"/>
+            <Button Content="Update Visitor"
+                    Width="150"
+                    Height="35"
+                    Margin="5"
+                    Click="UpdateVisitor_Click"/>
+        </StackPanel>
+        <DataGrid Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" x:Name="dataGridVisitors"
+          AutoGenerateColumns="True"
+          CanUserAddRows="False"
+          Height="Auto"
+          Margin="10"
+          Background="White"/>
+    </Grid>
+</UserControl>

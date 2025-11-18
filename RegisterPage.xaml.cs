@@ -16,7 +16,7 @@ namespace OnewheroVisitorManagement
     /// <summary>
     /// Interaction logic for RegisterPage.xaml
     /// </summary>
-    public partial class RegisterPage : Page
+    public partial class RegisterPage : UserControl
     {
         string connectionString = "Data Source=users.db;Version=3;";
         public RegisterPage()
@@ -54,11 +54,12 @@ namespace OnewheroVisitorManagement
                             if (Count > 0)
                             {
                                 MessageBox.Show("Welcome back " + fullName + "! We found your previous registration and filled in your details for you.", "Welcome Back", MessageBoxButton.OK, MessageBoxImage.Information);
-                                this.NavigationService.Navigate(new VisitorNav());
+                                RegisterContent.Content = new VisitorNav();
+
                             }
                             else
                             {
-                                this.NavigationService.Navigate(new RegisterNewVisitor(fullName, email));
+                                RegisterContent.Content = new RegisterNewVisitor(fullName, email);
                             }
                         }
                     }
@@ -71,11 +72,11 @@ namespace OnewheroVisitorManagement
                     txtEmail.Clear();
                 }
             }
-            }
+        }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 
         }
     }
-    }
+}
